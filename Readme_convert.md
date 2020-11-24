@@ -24,20 +24,23 @@ Issues
 ### Step 1: extract the images to a folder named media
 
 ```
-conda env create -f convert_env.yml
+export cdocs=~/repos/convert_docs
+cd $cdocs
+conda install conda-lock
+conda-lock -f environment.yml -p osx-64
+conda  create --name convert  --file conda-osx-64.lock
 conda activate convert
-python image_extract.py week01_C1_Introduction2018.pptx media
+cd ~/google_drive/e340_convert/Day_01_Intro/Slides
+python $cdocs/scripts/image_extract.py Day01_IntroClass_2019t2.pptx media
 ```
 
 ### Step 2: convert any wmf files to png using snaggit
 
 ### Step 3: make the markdown file
 
-`python build_notebook.py week01_C1_Introduction2018.pptx media`
+`python $cdocs/scripts/build_notebook.py Day01_IntroClass_2019t2.pptx media`
 
-### Step 4: tweek in jupyter, resizing img tags as needed
-
-### Step 5: convert to a slideshow using [rise](https://rise.readthedocs.io/en/stable/)
+### Step 4: edit the markdown to make questions md2canvas compatible
 
 
 

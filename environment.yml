@@ -10,6 +10,7 @@ dependencies:
   - numpy
   - scipy
   - matplotlib
+  - jupytext
   - python-pptx
   - conda-lock
 # conda-lock -f environment.yml -p linux-64

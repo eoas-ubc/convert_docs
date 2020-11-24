@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-root_dir = Path(__file__).resolve()
+root_dir = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(root_dir))
 sep = "*" * 30
 print(f"{sep}\ncontext imported. Front of path:\n{sys.path[0]}\n"
